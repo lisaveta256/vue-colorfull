@@ -188,5 +188,7 @@ Dribbble: <https://dribbble.com/creativetim>
 Instagram: <https://www.instagram.com/CreativeTimOfficial>
 
 ## Start
+- npm i
 - npm run build
 - npm run serve
+- start laravel server and check url of the server

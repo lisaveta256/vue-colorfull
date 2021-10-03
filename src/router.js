@@ -13,6 +13,13 @@ import Ndex from './views/Ndex.vue';
 import Registration from './views/Registration.vue';
 import Gallery from './views/Gallery.vue';
 import About from './views/About.vue';
+import Lessons from './views/Lessons.vue';
+import Buy from './views/Buy.vue';
+import Addons from './views/Addons.vue'
+import Tarif from './views/Tarif.vue'
+
+import VueRouteMiddleware from 'vue-route-middleware';
+import currentTarif from './middleware/CurrentTarifMiddleware';
 
 Vue.use(Router);
 
@@ -43,7 +50,29 @@ export default new Router({
       name :'about',
       components: {default : About, header: MainHeader, footer : Footer}
     },
-
+    {
+      path: '/lessons',
+      name:'lessons',
+      meta: {
+        middleware: currentTarif,
+       },
+      components: {default: Lessons, header: MainHeader, footer: Footer}
+    },
+    {
+      path:'/buy',
+      name: 'buy',
+      components:{default: Buy, header: MainHeader, footer: Footer}
+    },
+    {
+      path:'/addons',
+      name: 'addons',
+      components:{default: Addons, header: MainHeader, footer: Footer}
+    },
+    {
+      path:'/tarif',
+      name: 'tarif',
+      components:{default: Tarif, header: MainHeader, footer: Footer}
+    },
     {
       path: "/landing",
       name: "landing",
@@ -79,3 +108,4 @@ export default new Router({
     }
   }
 });
+//Router.beforeEach(VueRouteMiddleware());

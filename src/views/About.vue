@@ -259,3 +259,10 @@ export default {
     }
 }
 </script>
+<style scoped>
+#s2{
+  height: max-content;
+  background: wheat;
+  padding: 15px 15px 30px 15px;
+}
+</style>

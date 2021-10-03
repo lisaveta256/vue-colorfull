@@ -1,41 +1,24 @@
 <template>
-     <main>
-        <div id="section5">
-
-            <form action="">
-                <div id="login">
-                    <h2>Login</h2>
-                </div>
-               
-                <i class="md-icon md-icon-font md-theme-default">
-                    face
-                </i>
-                <input type="text" placeholder="Name"><br>
-                <i class="md-icon md-icon-font md-theme-default">
-                    face
-                </i>
-                <input type="text" placeholder="Second Name"><br>
-                <label for="">Country</label>
-                <select>
-                    <option value="1">Belarus</option>
-                    <option value="2">USA</option>
-                    <option value="3">Poland</option>
-                    <option value="4">Russia</option>
-                </select>
-                <br>
-                <label for="">Send message to email</label>
-                <br>
-                <span>Yes</span>
-                <input type="checkbox"><br>
-                <span>No</span> <input type="checkbox"><br>
-                <button>Submit</button>
-            </form>
-        </div>
+  <div class="wrapper registration">
+    <main>
+      <div id="section5">
+        <login-section v-if="registered"></login-section>
+        <registration-section v-else></registration-section>
+        <h2 v-if="registered">
+          Not registering yet?
+          <a href="#" @click="chageRegistered(false)">Registration</a>
+        </h2>
+        <h2 v-else>
+          <a href="#" @click="chageRegistered(true)">Back to login</a>
+        </h2>
+      </div>
     </main>
+  </div>
 </template>
-<style scoped>
 
-button{
+<style lang="scss">
+.registration.wrapper {
+  button {
     background: #ffffff;
     padding: 8px 22px;
     border: 1px solid #808080b8;
@@ -46,13 +29,15 @@ button{
     color: #4caf50;
     -webkit-box-shadow: 2px 2px 4px #808080b8;
     box-shadow: 2px 2px 4px #8080805c;
-}
-label{
+    margin-top: 34px;
+  }
+  label,
+  span {
     width: 120px;
-    display:inline-block;
-}
-form{
-    padding-top: 107px!important;
+    display: inline-block;
+  }
+  form {
+    padding-top: 107px !important;
     padding: 23px;
     background: white;
     min-width: 420px;
@@ -64,13 +49,12 @@ form{
     box-shadow: -1px -1px 4px gray;
     margin-top: 45px;
     margin-bottom: 45px;
-}
-#login{
+  }
+  #login {
     display: inline-block;
     text-align: center;
     width: calc(100% - 20px);
-    background: linear-gradient(
-        60deg,#66bb6a,#388e3c);
+    background: linear-gradient(60deg, #66bb6a, #388e3c);
     color: white;
     padding: 7px 15px;
     position: absolute;
@@ -78,26 +62,66 @@ form{
     left: 50%;
     transform: translateX(-50%);
     margin-top: -12px;
-    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%), 0 13px 24px -11px rgb(76 175 80 / 60%);
-}
-input{
-    margin: 4px;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%),
+      0 13px 24px -11px rgb(76 175 80 / 60%);
+  }
+  input {
     display: inline-block;
+    margin: 4px;
+  }
+  input[type="text"], input[type="password"] {
     width: 90%;
     line-height: 23pt;
     background: none;
     border: none;
     border-bottom: 1px solid gray;
     color: gray;
+  }
+  select {
+    border: none;
+    border-bottom: 1px gray solid;
+    border-right: 1px gray solid;
+    line-height: 23pt;
+    margin: 4px;
+    padding: 4px 22px;
+    width: 65%;
+  }
+  h2 {
+    font-family: Courier New, monospace;
+  }
 }
- select{
-     border:none;
-     border-bottom: 1px gray solid;
-     border-right: 1px gray solid;
-     line-height: 23pt;
-     margin: 4px;
-     padding: 4px 22px;
-     width:65%;
- }   
- h2{font-family: Courier New, monospace;}
 </style>
+<style >
+</style>
+
+
+<script>
+import LoginSection from "./components/LoginSection.vue";
+import RegistrationSection from "./components/RegistrationSection.vue";
+
+export default {
+  components: {
+    LoginSection,
+    RegistrationSection,
+  },
+  bodyClass: "login-registration-page",
+  data() {
+    return {
+      registered: true,
+    };
+  },
+  props: {
+    header: {
+      type: String,
+      default: require("@/assets/img/profile_city.jpg"),
+    },
+  },
+  methods: {
+    chageRegistered(value) {
+      this.registered = value;
+    },
+  },
+};
+</script>
+
+<style lang="css"></style>
