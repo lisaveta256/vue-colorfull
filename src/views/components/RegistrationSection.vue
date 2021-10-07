@@ -12,7 +12,11 @@
       <md-icon>lock_outline</md-icon>
       <input type="password" placeholder="Password" v-model="password" /><br />
       <md-icon>lock_outline</md-icon>
-      <input type="password" placeholder="Confirm password" v-model="password_confirmation" /><br />
+      <input
+        type="password"
+        placeholder="Confirm password"
+        v-model="password_confirmation"
+      /><br />
       <label for="">Country</label>
       <select v-model="country">
         <option value="1">Belarus</option>
@@ -45,7 +49,7 @@ export default {
       nameField: "",
       email: "",
       password: "",
-      password_confirmation:"",
+      password_confirmation: "",
       country: "",
       message: [],
     };
@@ -53,18 +57,19 @@ export default {
   methods: {
     submit: function () {
       axios
-        .get("http://localhost:8001/api/register", {
-          params: {
-            name: this.nameField,
-            email: this.email,
-            password: this.password,
-            password_confirmation: this.password_confirmation,
-            country: this.country,
-            message: this.message,
-          },
+        .post("/api/register", {
+          name: this.nameField,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.password_confirmation,
+          country: this.country,
+          message: this.message,
         })
         .then((res) => {
           console.log(res);
+          this.$router.go('registration');
+          // window.location.href='/#/clients';
+        //  window.location.reload();
         });
     },
   },

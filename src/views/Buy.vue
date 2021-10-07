@@ -51,22 +51,16 @@ export default {
   data() {
     return {
       descriptionArray: [],
-      userData: {},
-      localAuth: "Bearer I5PCiLwf70tkhtaAYgmVEjxiFpa8Q35oSUhsCQMm",
+      userData: {}
     };
   },
   methods: {},
   created() {
-    var config = {
-      headers: {
-        Authorization: this.localAuth,
-      },
-    };
-    axios.get("http://localhost:8001/api/tarif").then((data) => {
+    axios.get("/api/tarif").then((data) => {
       this.descriptionArray = data["data"];
     });
     axios
-      .get("http://localhost:8001/api/tarif_user/current", config)
+      .get("/api/tarif_user/current")
       .then((data) => {
         this.userData = data["data"];
         console.log(this.userData);

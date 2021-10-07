@@ -1,11 +1,11 @@
 import Vue from "vue";
-import Router from "vue-router";
+import Router from "vue-router";/*
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
-import MainFooter from "./layout/MainFooter.vue";
+import MainFooter from "./layout/MainFooter.vue";*/
 
 import Footer from './layout/Footer.vue';
 import MainHeader from "./layout/MainHeader.vue";
@@ -15,10 +15,11 @@ import Gallery from './views/Gallery.vue';
 import About from './views/About.vue';
 import Lessons from './views/Lessons.vue';
 import Buy from './views/Buy.vue';
-import Addons from './views/Addons.vue'
-import Tarif from './views/Tarif.vue'
-
-import VueRouteMiddleware from 'vue-route-middleware';
+import Addons from './views/Addons.vue';
+import Tarif from './views/Tarif.vue';
+import Clients from './views/Clients.vue';
+/*
+import VueRouteMiddleware from 'vue-route-middleware';*/
 import currentTarif from './middleware/CurrentTarifMiddleware';
 
 Vue.use(Router);
@@ -72,7 +73,7 @@ export default new Router({
       path:'/tarif',
       name: 'tarif',
       components:{default: Tarif, header: MainHeader, footer: Footer}
-    },
+    },/*
     {
       path: "/landing",
       name: "landing",
@@ -81,7 +82,14 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
       }
-    }/*,
+    },*/
+    {
+      path:'/clients',
+      name:'clients',
+      components: { default: Clients, header: MainHeader, footer: Footer },
+    }
+    
+    /*,
     {
       path: "/login",
       name: "login",

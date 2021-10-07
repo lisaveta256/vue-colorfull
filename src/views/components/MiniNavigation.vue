@@ -6,19 +6,22 @@
       |
       <a href="/#/gallery/" id="">Gallery</a>
       |
+      <a href="/#/clients/" id="">Clients</a>
+      |
       <a href="/#/registration/" id="">Registration</a>
-      | or <a href="http://localhost:8001/api/logout/" id="">Log out</a>
+      | or <a href="#" @click="logOut">Log out</a>
       <a href="/#/about/" id="">About</a>
       |
       <a href="/#/lessons/" id="">Lessons</a>
       |
       <a href="/#/buy/" id="">Buy</a>
       |
-      <a v-if='currentTarif=="premium"' href="/#/addons/" id="">Addons</a>
+      <a v-if="currentTarif == 'premium'" href="/#/addons/" id="">Addons</a>
     </nav>
   </div>
 </template>
-<style scoped>/* eslint-disable */
+<style scoped>
+/* eslint-disable */
 div {
   position: absolute;
   top: 20px;
@@ -30,7 +33,7 @@ nav a {
 }
 </style>
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
@@ -39,20 +42,24 @@ export default {
   },
   methods: {
     getTarif() {
-      var config = {
+     /* var config = {
         headers: {
           Authorization: "Bearer I5PCiLwf70tkhtaAYgmVEjxiFpa8Q35oSUhsCQMm",
         },
-      };
+      };*/
       axios
-        .get("http://localhost:8001/api/tarif_user/current", config)
+        .get("/api/tarif_user/current")
         .then((data) => {
-          this.currentTarif = data["data"]["tarif_info"]["tarif_user_tarif_name"];
+          this.currentTarif =
+            data["data"]["tarif_info"]["tarif_user_tarif_name"];
         });
     },
+    logOut(){
+      axios.post("/api/logout/");
+    }
   },
-  created(){
-      this.getTarif();
-  }
+  created() {
+    this.getTarif();
+  },
 };
 </script>

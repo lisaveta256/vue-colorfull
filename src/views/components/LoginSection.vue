@@ -39,3 +39,36 @@
   }
 }
 </style>
+<script>
+import axios from "axios";
+//import useRouter from 'vue-router';
+
+export default {
+  name: "Login",
+  data() {
+    return {
+      email: "",
+      password: ""
+      
+    };
+  },
+  methods: {
+    submit: function () {
+     // var router=useRouter();
+      axios
+        .post("/api/login",{
+            email: this.email,
+            password: this.password
+          //,
+         // headers: {"Accept": "application/json"}
+        })
+        .then((res) => {
+          var token = res.data.token;
+          localStorage.setItem('token',token);
+          //console.log(res);
+          this.$router.push('/')
+        });
+    },
+  },
+};
+</script>

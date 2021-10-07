@@ -6,10 +6,10 @@
         <registration-section v-else></registration-section>
         <h2 v-if="registered">
           Not registering yet?
-          <a href="#" @click="chageRegistered(false)">Registration</a>
+          <a href="#/registration" @click="chageRegistered(false)">Registration</a>
         </h2>
         <h2 v-else>
-          <a href="#" @click="chageRegistered(true)">Back to login</a>
+          <a href="#/registration" @click="chageRegistered(true)">Back to login</a>
         </h2>
       </div>
     </main>
@@ -109,12 +109,6 @@ export default {
     return {
       registered: true,
     };
-  },
-  props: {
-    header: {
-      type: String,
-      default: require("@/assets/img/profile_city.jpg"),
-    },
   },
   methods: {
     chageRegistered(value) {
