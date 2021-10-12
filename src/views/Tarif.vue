@@ -4,6 +4,7 @@
       <div class="col-4"  v-for="item in description['data']" :key="item.id" >
         <div v-html="item['description']">
         </div>
+        <button @click='activate1(item.id)' :id='item.id'>Buy</button>
       </div>
     </div>
   </div>
@@ -39,12 +40,21 @@
 }
 </style>
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
 
     };
   },
-  props: ["description"]
+  props: ["description"],
+  methods:{
+    activate1:function(id){
+      axios.post(`/api/tarif_user/${id}`)
+      .then((mes)=>{
+        console.log(mes);
+      });
+    }
+  },
 };
 </script>

@@ -18,6 +18,10 @@ import Buy from './views/Buy.vue';
 import Addons from './views/Addons.vue';
 import Tarif from './views/Tarif.vue';
 import Clients from './views/Clients.vue';
+import Tarifs from './views/Tarifs.vue';
+import Users from './views/Users.vue';
+import OneTarif from './views/OneTarif.vue';
+
 /*
 import VueRouteMiddleware from 'vue-route-middleware';*/
 import currentTarif from './middleware/CurrentTarifMiddleware';
@@ -73,7 +77,24 @@ export default new Router({
       path:'/tarif',
       name: 'tarif',
       components:{default: Tarif, header: MainHeader, footer: Footer}
-    },/*
+    },
+    {
+      path:'/tarifs',
+      name: 'tarifs',
+      components:{default: Tarifs, header: MainHeader, footer: Footer}
+    },
+    {
+      props: { default: true, header: false, footer: false},
+      path:'/tarifs/info/:id',
+      name: 'tarif_info',
+      components:{default: OneTarif, header: MainHeader, footer: Footer}
+    },
+    {
+      path:'/users',
+      name: 'users',
+      components:{default: Users, header: MainHeader, footer: Footer}
+    },
+      /*
     {
       path: "/landing",
       name: "landing",

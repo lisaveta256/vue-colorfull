@@ -8,7 +8,7 @@
       <i class="md-icon md-icon-font md-theme-default"> face </i>
       <input type="text" placeholder="Name" v-model="nameField" /><br />
       <i class="md-icon md-icon-font md-theme-default"> face </i>
-      <input type="text" placeholder="Email" v-model="email" /><br />
+      <input type="email" placeholder="Email" v-model="email" /><br />
       <md-icon>lock_outline</md-icon>
       <input type="password" placeholder="Password" v-model="password" /><br />
       <md-icon>lock_outline</md-icon>

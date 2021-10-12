@@ -3,19 +3,19 @@
     <h3>
       Hello,
       <b class="user-info"
-        >{{ userData["user_info"] }}</b
+        >{{ userData["name"] }}</b
       >!
     </h3>
     <span>
       Your tarif is
       <b class="user-info"
-        >{{ userData["tarif_info"]["tarif_user_tarif_name"] }}</b
+        >{{ userData["last_tarif_name"] }}</b
       >.</span
     ><br />
     <span>
       Data of activation is
       <b class="user-info"
-        >{{ userData["tarif_info"]["tarif_user_tarif_updated_at"] }}</b
+        >{{ userData["updated_at"] }}</b
       >.</span
     >
     <hr />
@@ -62,7 +62,7 @@ export default {
     axios
       .get("/api/tarif_user/current")
       .then((data) => {
-        this.userData = data["data"];
+        this.userData = data["data"]["data"];
         console.log(this.userData);
       });
   },

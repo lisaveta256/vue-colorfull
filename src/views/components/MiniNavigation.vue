@@ -8,13 +8,18 @@
       |
       <a href="/#/clients/" id="">Clients</a>
       |
-      <a href="/#/registration/" id="">Registration</a>
-      | or <a href="#" @click="logOut">Log out</a>
+      <a v-if="ifToken" href="#" @click="logOut">Log out</a>
+      <a v-else href="/#/registration/" id="">Registration</a>
+      |
       <a href="/#/about/" id="">About</a>
       |
       <a href="/#/lessons/" id="">Lessons</a>
       |
       <a href="/#/buy/" id="">Buy</a>
+      |
+      <a href="/#/tarifs/" id="">Tarifs</a>
+      |
+      <a href="/#/users/" id="">users</a>
       |
       <a v-if="currentTarif == 'premium'" href="/#/addons/" id="">Addons</a>
     </nav>
@@ -42,21 +47,28 @@ export default {
   },
   methods: {
     getTarif() {
-     /* var config = {
+      /* var config = {
         headers: {
           Authorization: "Bearer I5PCiLwf70tkhtaAYgmVEjxiFpa8Q35oSUhsCQMm",
         },
       };*/
-      axios
-        .get("/api/tarif_user/current")
-        .then((data) => {
-          this.currentTarif =
-            data["data"]["tarif_info"]["tarif_user_tarif_name"];
-        });
+      axios.get("/api/tarif_user/current").then((data) => {
+        this.currentTarif = data["data"]["last_tarif_name"];
+      });
     },
-    logOut(){
+    logOut() {
+      localStorage.clear();
       axios.post("/api/logout/");
-    }
+    },
+  },
+  computed: {
+    ifToken: function () {
+      if (localStorage.getItem("token") != null) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   created() {
     this.getTarif();
