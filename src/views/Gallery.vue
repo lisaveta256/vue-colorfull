@@ -1,78 +1,291 @@
 <template>
-     <main>
-      
-        <section id="s2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 photo md-1"></div>
-                    <div class="col-4 photo md-1"></div>
-                    <div class="col-4 photo md-1"></div>
-                    <div class="col-4 photo md-1"></div>
-                    <div class="col-4 photo md-1"></div>
-                    <div class="col-4 photo md-1"></div>
-                </div>
-            </div>
-        </section>
-        <section id="s3">
-            <h2>
-                Lorem Ipsum
-            </h2>
-            <h3>
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-            </h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor tortor, aliquet eu risus eget,
-                tristique scelerisque magna. Nullam vulputate nisi in sollicitudin faucibus. Nam erat magna, auctor at
-                tempus ut, bibendum vitae turpis. Vivamus sagittis semper massa, ut luctus ipsum. Proin lorem dolor,
-                pulvinar id nisi et, ultricies posuere lorem. Praesent vel accumsan nunc. Nunc id elit ac nisi
-                scelerisque elementum. Nullam fringilla vel lacus accumsan placerat. Curabitur dui lectus, mattis at leo
-                commodo, efficitur finibus orci. Suspendisse nec quam nulla. Aenean rhoncus libero vitae tortor
-                condimentum interdum. Integer purus magna, pharetra vitae scelerisque eget, commodo vel metus. Duis
-                ullamcorper hendrerit nibh, vitae placerat risus. Proin ut imperdiet magna. Suspendisse eget molestie
-                enim. Vestibulum et est augue.
+  <main>
 
-                Pellentesque placerat urna id laoreet porta. Sed iaculis libero porttitor orci hendrerit tempor.
-                Vestibulum cursus, sem vitae elementum mattis, libero odio laoreet est, sed hendrerit ligula quam vel
-                purus. Nam odio risus, fermentum sed lectus ac, tempus egestas nulla. Pellentesque pulvinar hendrerit
-                turpis in viverra. Donec sed eros aliquet, blandit nisl in, ultrices leo. Nullam sed pharetra libero.
-                Sed vitae enim lorem. Nunc interdum urna quis elementum molestie. Suspendisse euismod lorem facilisis
-                magna blandit, auctor ornare nunc porta. Nullam sodales maximus diam, vel euismod enim vulputate sit
-                amet. Nulla facilisi. Sed vitae aliquet elit. Aliquam ultrices enim et nunc pulvinar, sit amet
-                pellentesque mauris ornare. Quisque fermentum magna ac elit maximus tincidunt. In vulputate dui ac
-                faucibus mollis.
-            </p>
-        </section>
-        <section id="s4"></section>
-        <section id="s5"></section>
-        <section id="s6"></section>
+    <section id="s2">
+    <div class="gallery">
+      <div class="gallery__column">
+        <a
+          href="https://unsplash.com/@jeka_fe"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/_cvwXhGqG-o/300x300"
+              alt="Portrait by Jessica Felicio"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Jessica Felicio
+            </figcaption>
+          </figure>
+        </a>
 
+        <a
+          href="https://unsplash.com/@oladimeg"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/AHBvAIVqk64/300x500"
+              alt="Portrait by Oladimeji Odunsi"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Oladimeji Odunsi
+            </figcaption>
+          </figure>
+        </a>
 
-    </main>
+        <a
+          href="https://unsplash.com/@a2eorigins"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/VLPLo-GtrIE/300x300"
+              alt="Portrait by Alex Perez"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Alex Perez
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="gallery__column">
+        <a
+          href="https://unsplash.com/@noahbuscher"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/AR7aumwKr2s/300x300"
+              alt="Portrait by Noah Buscher"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Noah Buscher
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@von_co"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/dnL6ZIpht2s/300x300"
+              alt="Portrait by Ivana Cajina"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Ivana Cajina
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@samburriss"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/tV_1sC603zA/300x500"
+              alt="Portrait by Sam Burriss"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Sam Burriss
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="gallery__column">
+        <a
+          href="https://unsplash.com/@marilezhava"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/Xm9-vA_bhm0/300x500"
+              alt="Portrait by Mari Lezhava"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Mari Lezhava
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@ethanhaddox"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/NTjSR3zYpsY/300x300"
+              alt="Portrait by Ethan Haddox"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Ethan Haddox
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@mr_geshani"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/2JH8d3ChNec/300x300"
+              alt="Portrait by Amir Geshani"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Amir Geshani
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="gallery__column">
+        <a
+          href="https://unsplash.com/@frxgui"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/FQhLLehm4dk/300x300"
+              alt="Portrait by Guilian Fremaux"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Guilian Fremaux
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@majestical_jasmin"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/OQd9zONSx7s/300x300"
+              alt="Portrait by Jasmin Chew"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Jasmin Chew
+            </figcaption>
+          </figure>
+        </a>
+
+        <a
+          href="https://unsplash.com/@dimadallacqua"
+          target="_blank"
+          class="gallery__link"
+        >
+          <figure class="gallery__thumb">
+            <img
+              src="https://source.unsplash.com/XZkEhowjx8k/300x500"
+              alt="Portrait by Dima DallAcqua"
+              class="gallery__image"
+            />
+            <figcaption class="gallery__caption">
+              Portrait by Dima DallAcqua
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+    </section>
+
+  </main>
 </template>
 <style scoped>
 
-.photo{
-    border-radius: 13px;
-    margin-block: 8px;
-
-    
-}
-.photo:nth-child(odd){
-    background-image:url('https://www.wallpaperup.com/uploads/wallpapers/2019/01/11/1307752/69f6782a40dbca275a23b2dbbed1d428.jpg');
-    height: 200px;
-}
-.photo:nth-child(even){
-    background-image:url('https://wallpaperscave.com/images/original/18/08-31/abstract-colors-80593.jpg');
-    height: 200px;
-}
-.row{
-    width: 100%;
-}
-#s2{
-    height: auto;
-    background: wheat;
-    padding: 67px 15px;
+#s2 {
+  height: auto;
+  background: white;
+  padding: 67px 15px;
 }
 
+</style>
+<style lang="scss" scoped>
+.gallery {
+	display: flex;
+	padding: 2px;
+	transition: .3s;
+	
+	&:hover &__image {
+		filter: grayscale(1);
+	}
+	
+	&__column {
+		display: flex;
+		flex-direction: column;
+		width: 25%;
+	}
+	
+	&__link {
+		margin: 2px;
+		overflow: hidden;
+		
+		&:hover {
+			.gallery__image {
+				filter: grayscale(0);
+			}
+			
+			.gallery__caption {
+				opacity: 1;
+			}
+		}
+	}
+	
+	&__thumb {
+		position: relative;
+	}
+	
+	&__image {
+		display: block;
+		width: 100%;
+		transition: .3s;
+		
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	
+	&__caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 25px 15px 15px;
+		width: 100%;
+		font-family: 'Raleway', sans-serif;
+		font-size: 16px;
+		color: white;
+		opacity: 0;
+		background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255 ,255 , 0) 100%);
+		transition: .3s;
+	}
+}
 
 </style>

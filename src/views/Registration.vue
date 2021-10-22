@@ -69,7 +69,7 @@
     display: inline-block;
     margin: 4px;
   }
-  input[type="text"], input[type="password"] {
+  input[type="text"],input[type="email"], input[type="password"] {
     width: 90%;
     line-height: 23pt;
     background: none;

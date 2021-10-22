@@ -11,6 +11,8 @@
       <a v-if="ifToken" href="#" @click="logOut">Log out</a>
       <a v-else href="/#/registration/" id="">Registration</a>
       |
+      <a v-if="ifToken" href="/#/account/">Account</a>
+      |
       <a href="/#/about/" id="">About</a>
       |
       <a href="/#/lessons/" id="">Lessons</a>
@@ -59,6 +61,7 @@ export default {
     logOut() {
       localStorage.clear();
       axios.post("/api/logout/");
+       window.location.reload();
     },
   },
   computed: {

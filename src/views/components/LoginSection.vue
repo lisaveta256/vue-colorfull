@@ -66,7 +66,8 @@ export default {
           var token = res.data.token;
           localStorage.setItem('token',token);
           //console.log(res);
-          this.$router.push('/')
+          this.$router.push('/');
+           window.location.reload();
         });
     },
   },

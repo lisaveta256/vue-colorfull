@@ -21,6 +21,7 @@ import Clients from './views/Clients.vue';
 import Tarifs from './views/Tarifs.vue';
 import Users from './views/Users.vue';
 import OneTarif from './views/OneTarif.vue';
+import Account from './views/Account.vue';
 
 /*
 import VueRouteMiddleware from 'vue-route-middleware';*/
@@ -93,6 +94,11 @@ export default new Router({
       path:'/users',
       name: 'users',
       components:{default: Users, header: MainHeader, footer: Footer}
+    },
+    {
+      path:'/account',
+      name: 'account',
+      components:{default: Account, header: MainHeader, footer: Footer}
     },
       /*
     {
