@@ -22,7 +22,7 @@
                 <label class="labels">Confirmed password</label
                 ><input
                   type="text"
-                  name="confirmed_password"
+                  name="password_confirmation"
                   class="form-control"
                   placeholder="confirmed password"
                   value=""

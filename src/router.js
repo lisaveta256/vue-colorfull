@@ -23,6 +23,8 @@ import Users from './views/Users.vue';
 import OneTarif from './views/OneTarif.vue';
 import Account from './views/Account.vue';
 
+import UserAuth from './views/UserAuth';
+
 /*
 import VueRouteMiddleware from 'vue-route-middleware';*/
 import currentTarif from './middleware/CurrentTarifMiddleware';
@@ -99,6 +101,11 @@ export default new Router({
       path:'/account',
       name: 'account',
       components:{default: Account, header: MainHeader, footer: Footer}
+    },
+    {
+      path: '/vkk',
+      name: 'vkk',
+      components:{default:UserAuth}
     },
       /*
     {

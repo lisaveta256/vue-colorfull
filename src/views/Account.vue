@@ -3,50 +3,19 @@
     <div class="container rounded bg-white mt-5 mb-5">
       <div class="row">
         <div class="col-md-3 border-right">
-          <div
-            class="d-flex flex-column align-items-center text-center p-3 py-5"
-          >
-            <img
-              class="rounded-circle mt-5"
-              width="150px"
-              :src="accountPicture"
-            />
-            <span class="font-weight-bold">{{ accountData.data.name }}</span
-            ><span class="text-black-50">edogaru@mail.com.my</span>
-
-            <form enctype="multipart/form-data" @submit.prevent="loadImage">
-              <div class="example-1">
-                <div class="form-group">
-                  <label class="label">
-                    <i class="material-icons">attach_file</i>
-                    <span class="title">Добавить файл</span><br />
-                    <span class="js-value"></span>
-                    <input type="file" name="picture1" id="file" />
-                  </label>
-                </div>
-                <input
-                  type="submit"
-                  class="btn btn-primary profile-button"
-                  value="Change img"
-                />
-              </div>
-            </form>
-            <hr />
-            <ul>
-              <li
-                @click="view = 'info'"
-                :class="view == 'info' ? 'active' : ''"
-              >
-                Info
-              </li>
-              <li
-                @click="view = 'password'"
-                :class="view == 'password' ? 'active' : ''"
-              >
-                Password
-              </li>
-            </ul>
-          </div>
+          <account-change-image></account-change-image>
+          <hr />
+          <ul>
+            <li @click="view = 'info'" :class="view == 'info' ? 'active' : ''">
+              Info
+            </li>
+            <li
+              @click="view = 'password'"
+              :class="view == 'password' ? 'active' : ''"
+            >
+              Password
+            </li>
+          </ul>
         </div>
         <div class="col-md-5 border-right" @submit.prevent="setData">
           <account-change-info v-if="view == 'info'"></account-change-info>
@@ -226,7 +195,7 @@ import axios from "axios";
 
 import AccountChangePassword from "./components/AccountChangePassword.vue";
 import AccountChangeInfo from "./components/AccountChangeInfo.vue";
-
+import AccountChangeImage from "./components/AccountChangeImage.vue";
 export default {
   data() {
     return {
@@ -243,6 +212,7 @@ export default {
   components: {
     AccountChangePassword,
     AccountChangeInfo,
+    AccountChangeImage,
   },
   methods: {
     getData() {
@@ -279,6 +249,7 @@ export default {
         })
         .then((data) => {
           this.$set(this.accountData, "data", data.data.data);
+          window.location.reload();
         });
     },
   },

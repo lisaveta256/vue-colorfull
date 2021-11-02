@@ -6,29 +6,39 @@
       |
       <a href="/#/gallery/" id="">Gallery</a>
       |
+      <a href="/#/about/" id="">About</a>
+      |
       <a href="/#/clients/" id="">Clients</a>
       |
-      <a v-if="ifToken" href="#" @click="logOut">Log out</a>
-      <a v-else href="/#/registration/" id="">Registration</a>
-      |
-      <a v-if="ifToken" href="/#/account/">Account</a>
-      |
-      <a href="/#/about/" id="">About</a>
+      <a v-if="!ifToken" href="/#/registration/" id="">Registration</a>
       |
       <a href="/#/lessons/" id="">Lessons</a>
       |
+      <a href="/#/tarifs/" id="">Tarifs users</a>
+      |
       <a href="/#/buy/" id="">Buy</a>
       |
-      <a href="/#/tarifs/" id="">Tarifs</a>
-      |
-      <a href="/#/users/" id="">users</a>
-      |
-      <a v-if="currentTarif == 'premium'" href="/#/addons/" id="">Addons</a>
+      <ul v-if="ifToken">
+        <li><i class="fa fa-user" aria-hidden="true" @click="show=!show"></i></li>
+        <li v-if='show'><a href="/#/account/">Account</a></li>
+        <li v-if='show'><a href="#" @click="logOut">Log out</a></li>
+        <li v-if="(currentTarif == 'premium' && show == true)">
+          <a href="/#/addons/" id="">Addons</a>
+        </li>
+      </ul>
     </nav>
   </div>
 </template>
 <style scoped>
 /* eslint-disable */
+ul {
+  display: inline-block;
+  vertical-align: top;
+}
+li{
+  min-width: 120px;
+
+}
 div {
   position: absolute;
   top: 20px;
@@ -45,6 +55,7 @@ export default {
   data() {
     return {
       currentTarif: "",
+      show:false
     };
   },
   methods: {
@@ -61,7 +72,7 @@ export default {
     logOut() {
       localStorage.clear();
       axios.post("/api/logout/");
-       window.location.reload();
+      window.location.reload();
     },
   },
   computed: {
